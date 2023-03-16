@@ -2,35 +2,29 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Superheroes</title>'
+    <title>Superhero Powers</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 
-<h1>Superhero database</h1>
+<h1>Superhero Power</h1>
 <table class="table table-dark">
     <thead>
     <tr>
         <th scope="col">Hero Name</th>
         <th scope="col">Real Name</th>
-        <th scope="col">Creation Year</th>
-        <th scope="col">Power</th>
+        <th scope="col">Powers</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="hero : ${heroes}">
-        <td th:text="${hero.heroName}"/>
-        <td th:text="${hero.realName}"/>
-        <td th:text="${hero.creationYear}"/>
-        <td>
-            <a th:href="@{/kea/superpower/{name}(name=${hero.heroName})}">
-                <button>Powers</button>
-            </a>
-
-        </td>
+    <tr>
+        <td th:text="${heroPowers.heroName}"/>
+        <td th:text="${heroPowers.realName}"/>
+        <td th:text="${heroPowers.superpowers}"/>
     </tr>
     </tbody>
 </table>
 </body>
+
 </html>
