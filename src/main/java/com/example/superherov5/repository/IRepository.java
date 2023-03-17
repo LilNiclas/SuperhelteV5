@@ -13,4 +13,8 @@ public interface IRepository {
 
     //Q3:
     public HeroPowerDTO heroPowerByName(String name);
+
+    //Q4:
+    public List<String> getCities();
+    public List<String> getPowers();
 }

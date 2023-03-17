@@ -2,7 +2,6 @@ package com.example.superherov5.service;
 
 import com.example.superherov5.dto.HeroPowerDTO;
 import com.example.superherov5.dto.SuperheroDTO;
-import com.example.superherov5.model.Superhero;
 import com.example.superherov5.repository.MyRepositoryDB;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +26,13 @@ public class MyService {
         return myRepositorydb.heroPowerByName(name);
     }
 
+    //Q4
+    public List<String> getCities() {
+        return myRepositorydb.getCities();
+    }
 
+    //Q4
+    public List<String> getPowers() {
+        return  myRepositorydb.getPowers();
+    }
 }

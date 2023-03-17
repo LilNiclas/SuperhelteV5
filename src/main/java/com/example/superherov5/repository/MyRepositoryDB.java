@@ -6,6 +6,7 @@ import com.example.superherov5.model.Superhero;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -67,4 +68,40 @@ public class MyRepositoryDB implements IRepository {
             throw new RuntimeException(e);
         }
     }
+
+
+    //Q4: Returns cities from City table
+    public List<String> getCities() {
+        List<String> cities = new ArrayList<>();
+        try (Connection con = DriverManager.getConnection(db_url, uid, pwd)) {
+            String SQL = "SELECT CITY_NAME FROM CITY";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                String cityName = rs.getString("CITY_NAME");
+                cities.add(cityName);
+            }
+            return cities;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //Q4: Returns superpowers from superpower table
+    public List<String> getPowers() {
+        List<String> powers = new ArrayList<>();
+        try (Connection con = DriverManager.getConnection(db_url, uid, pwd)) {
+            String SQL = "SELECT SUPERPOWER FROM SUPERPOWER";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                String power = rs.getString("SUPERPOWER");
+                powers.add(power);
+            }
+            return powers;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
