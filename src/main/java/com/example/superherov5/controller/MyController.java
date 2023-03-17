@@ -24,7 +24,7 @@ public class MyController {
         this.myService = myService;
     }
 
-    //Q1
+    //Q2
     @GetMapping(path = "superheroes")     //localhost:8083/kea/superheroes
     public String getSuperheroes(Model model) {
         List<SuperheroDTO> getSuperheroes = myService.getSuperheroes();
@@ -39,5 +39,4 @@ public class MyController {
         model.addAttribute("heroPowers", powerByName);
         return "powers";
     }
-
 }

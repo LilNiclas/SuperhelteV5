@@ -22,7 +22,7 @@ public class MyRepositoryDB implements IRepository {
     @Value("${spring.datasource.password}")
     private String pwd;
 
-    //Q1: Returns all heroes
+    //Q2: Return all heroes
     @Override
     public List<SuperheroDTO> getSuperheroes() {
         List<SuperheroDTO> superheroes = new ArrayList<>();
@@ -43,6 +43,7 @@ public class MyRepositoryDB implements IRepository {
         }
     }
 
+    //Q3: Return hero and powers
     @Override
     public HeroPowerDTO heroPowerByName(String name) {
         HeroPowerDTO heroPowerObj = null;
@@ -66,5 +67,4 @@ public class MyRepositoryDB implements IRepository {
             throw new RuntimeException(e);
         }
     }
-
 }

@@ -6,8 +6,6 @@ public class SuperheroDTO {
     private String realName;
     private int creationYear;
 
-    public SuperheroDTO() {}
-
     public SuperheroDTO(String heroName, String realName, int creationYear) {
         this.heroName = heroName;
         this.realName = realName;

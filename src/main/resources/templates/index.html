@@ -25,12 +25,17 @@
         <td th:text="${hero.creationYear}"/>
         <td>
             <a th:href="@{/kea/superpower/{name}(name=${hero.heroName})}">
-                <button>Powers</button>
+                <button type="button" class="btn btn-success">Powers</button>
             </a>
 
         </td>
     </tr>
     </tbody>
 </table>
+
+<a>
+    <button type="button" class="btn btn-secondary btn-lg btn-block">Add Superhero</button>
+</a>
+
 </body>
 </html>
