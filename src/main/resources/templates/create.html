@@ -11,40 +11,6 @@
 </head>
 <body>
 
-<!--<form th:action="@{/kea/superhero/add}" method="post" th:object="${superhero}">
-    <label>Hero name:</label>
-    <input type="text" th:field="*{heroName}" placeholder="Egyptian King" /><br/>
-
-    <label>Real name:</label>
-    <input type="text" th:field="*{realName}" placeholder="Mo Salah" /><br/>
-
-    <label>Creation Year:</label>
-    <input type="number" th:field="*{creationYear}" min="1800" max="2025" placeholder="1923" /><br/>
-
-    <label>City:</label>
-    <select th:field="*{city}">
-        <option value="">&#45;&#45;Please select&#45;&#45;</option>
-        <option th:each="city : ${cities}" th:value="${city}" th:text="${city}"></option>
-    </select>
-
-    <br>
-
-    <label>Chose the superpower</label>
-    <div th:each="power : ${powers}" class="checkbox-container">
-        <label><input type="checkbox" th:field="*{powers}" th:value="${power}" th:text="${power}" /></label>
-    </div>
-
-    <button type="submit">Create Superhero</button>
-
-    <button type="reset">Reset</button>
-
-    <a th:href="@{/kea/superheroes}">
-        <button type="button">Back to Database</button></a>
-
-</form>
-
--->
-
 <div align="center">
 
     <h1>Create Superhero</h1>
