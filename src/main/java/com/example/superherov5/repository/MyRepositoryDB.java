@@ -7,13 +7,12 @@ import com.example.superherov5.util.ConnectionManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository("superheroDB")
-public class MyRepositoryDB implements IRepository {
+public class  MyRepositoryDB implements IRepository {
 
     @Value("${spring.datasource.url}")
     private String db_url;
@@ -115,6 +114,7 @@ public class MyRepositoryDB implements IRepository {
 
     //Q
     public void addSuperHero(SuperheroFormDTO form) {
+
         try {
             Connection con = DriverManager.getConnection(db_url, uid, pwd);
             // ID's
@@ -133,8 +133,9 @@ public class MyRepositoryDB implements IRepository {
             }
 
             // insert row in superhero table
-            String SQL2 = "insert into superhero (hero_name, real_name, creation_year, city_id) " +
-                    "values(?, ?, ?, ?);";
+            String SQL2 = "INSERT INTO SUPERHEROES (HERO_NAME, REAL_NAME, CREATION_YEAR, CITY_ID) " +
+                    "VALUES(?, ?, ?, ?);";
+
             pstmt = con.prepareStatement(SQL2, Statement.RETURN_GENERATED_KEYS); // return autoincremented key
             pstmt.setString(1, form.getHeroName());
             pstmt.setString(2, form.getRealName());
@@ -148,14 +149,14 @@ public class MyRepositoryDB implements IRepository {
             }
 
             // find power_ids
-            String SQL3 = "select power_id from superpower where superpower = ?;";
+            String SQL3 = "SELECT SUPERPOWER_ID FROM SUPERPOWER WHERE SUPERPOWER = ?;";
             pstmt = con.prepareStatement(SQL3);
             for (String power : form.getPowers()) {
                 pstmt.setString(1, power);
                 rs = pstmt.executeQuery();
 
                 if (rs.next()) {
-                    powerIDs.add(rs.getInt("power_id"));
+                    powerIDs.add(rs.getInt("SUPERPOWER_ID"));
                 }
 
             }

@@ -3,12 +3,7 @@ package com.example.superherov5.controller;
 import com.example.superherov5.dto.HeroPowerDTO;
 import com.example.superherov5.dto.SuperheroDTO;
 import com.example.superherov5.dto.SuperheroFormDTO;
-import com.example.superherov5.repository.IRepository;
 import com.example.superherov5.service.MyService;
-import org.apache.catalina.core.ApplicationContext;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -59,6 +54,7 @@ public class MyController {
     @PostMapping(path = "superhero/add")
     public String addHero(@ModelAttribute("superhero") SuperheroFormDTO superheroFormDTO){
         myService.addSuperHero(superheroFormDTO);
+        System.out.println(superheroFormDTO.toString());
         return "redirect:/kea/superheroes";
     }
 }

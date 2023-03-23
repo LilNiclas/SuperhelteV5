@@ -39,5 +39,7 @@ public class MyService {
 
     //Q4
     public void addSuperHero(SuperheroFormDTO form) {
+        myRepositorydb.addSuperHero(form);
     }
+
 }

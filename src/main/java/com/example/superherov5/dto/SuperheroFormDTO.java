@@ -11,8 +11,6 @@ public class SuperheroFormDTO {
     private String city;
     private List<String> powers;
 
-    public SuperheroFormDTO() {
-    } //Default constructor
 
     public SuperheroFormDTO(int heroID, String heroName, String realName, int creationYear, String city, List<String> powers) {
         this.heroID = heroID;
@@ -22,6 +20,10 @@ public class SuperheroFormDTO {
         this.city = city;
         this.powers = powers;
     }
+
+    public SuperheroFormDTO() {
+    } //Default constructor
+
 
     public void add(String power) {
         powers.add(power);

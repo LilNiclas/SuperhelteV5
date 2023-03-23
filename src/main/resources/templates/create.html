@@ -5,9 +5,6 @@
     <title>Add Superhero</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -21,24 +18,22 @@
 
         <div class="form-group row">
             <div class="col-sm-11">
-                <label class="col-sm-2 col-form-label">Real Name:</label>
-                <input type="text" id="realName" name="realName" th:field="*{realName}" placeholder="Egyptian King">
+                <label class="col-sm-2 col-form-label"> Hero Name:</label>
+                <input type="text" th:field="*{heroName}" placeholder="Egyptian King">
             </div>
         </div>
 
         <div class="form-group row">
             <div class="col-sm-11">
-                <label class="col-sm-2 col-form-label"> Hero Name:</label>
-                <input type="text" id="name" name="heroName" th:field="*{heroName}" placeholder="Mo Salah">
+                <label class="col-sm-2 col-form-label">Real Name:</label>
+                <input type="text" th:field="*{realName}" placeholder="Mo Salah">
             </div>
         </div>
-
 
         <div class=" form-group row">
             <div class="col-sm-11">
                 <label class="col-sm-2 col-form-label">Creation Year:</label>
-                <input type="text" id="creationYear" name="creationYear" min="1000" max="2030"
-                       th:field="*{creationYear}">
+                <input type="text" min="1000" max="2030" th:field="*{creationYear}">
             </div>
         </div>
 
