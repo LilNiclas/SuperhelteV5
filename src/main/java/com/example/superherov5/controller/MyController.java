@@ -54,7 +54,28 @@ public class MyController {
     @PostMapping(path = "superhero/add")
     public String addHero(@ModelAttribute("superhero") SuperheroFormDTO superheroFormDTO){
         myService.addSuperHero(superheroFormDTO);
-        System.out.println(superheroFormDTO.toString());
-        return "redirect:/kea/superheroes";
+        return "redirect:/kea/superheroes"; 	// PGR pattern
     }
+
+
+
+
+    @GetMapping("/update/{id}")
+    public String showUpdateProduct(@PathVariable("id") int updateId, Model model){
+        //hent produkt id fra repo og læg i model
+        model.addAttribute("superhero", myService.getPowersbyHeroID(updateId));
+        model.addAttribute("product", myService.getPowers());
+        model.addAttribute("product", myService.getCities());
+        return "update";
+    }
+
+    @PostMapping("/update")
+    public String updateProduct(@ModelAttribute SuperheroFormDTO formDTO) {
+        //myService.updateProduct(superheroFormDTO);
+        return "redirect:/kea/superheroes"; 	// PGR pattern
+    }
+
+
+
+
 }

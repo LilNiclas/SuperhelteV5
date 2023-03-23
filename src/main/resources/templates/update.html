@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Superhero</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<h1>Opdater Superhero </h1>
+<form action="/update" method="post" th:object="${product}">
+
+  <input type="hidden" name="id" th:value="*{id}">
+
+  <label for="name-field">Navn: </label>
+  <input id="name-field" name="name" th:value="${product.name}">
+
+  <label for="price-field">Pris: </label>
+  <input id="price-field" name="price" th:value="${product.price}">
+
+  <button type="submit">Opdater produkt</button>
+</form>
+
+
+</body>
+</html>

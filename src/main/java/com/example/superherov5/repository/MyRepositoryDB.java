@@ -174,4 +174,26 @@ public class  MyRepositoryDB implements IRepository {
             throw new RuntimeException(e);
         }
     }
+
+    public List<String> getPowersbyHeroID(int heroId) {
+        List<String> heroPowersList = new ArrayList<>();
+        try {
+            Connection con = ConnectionManager.getConnection(db_url, uid, pwd);
+            String SQL = "SELECT SUPERPOWER FROM SUPERPOWER INNER JOIN SUPERHEROPOWER USING(SUPERPOWER_ID) WHERE SUPERHERO_ID = ?";
+            PreparedStatement pstmt = con.prepareStatement(SQL);
+            pstmt.setInt(1, heroId);
+            ResultSet rs = pstmt.executeQuery();
+
+                while (rs.next()) {
+                String superpower = rs.getString("SUPERPOWERS");
+                heroPowersList.add(superpower);
+            }
+            return heroPowersList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
 }

@@ -42,4 +42,8 @@ public class MyService {
         myRepositorydb.addSuperHero(form);
     }
 
+    public List<String> getPowersbyHeroID(int heroId) {
+        return myRepositorydb.getPowersbyHeroID(heroId);
+    }
+
 }

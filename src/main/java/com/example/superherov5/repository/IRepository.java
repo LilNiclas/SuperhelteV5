@@ -19,4 +19,7 @@ public interface IRepository {
     public List<String> getCities();
     public List<String> getPowers();
     public void addSuperHero(SuperheroFormDTO form);
+
+
+    public List<String> getPowersbyHeroID(int heroId);
 }
